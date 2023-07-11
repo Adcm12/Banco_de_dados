@@ -40,12 +40,32 @@ while True:
 
 
     elif operacion == '2':
+
+        #Ler id de la columna a ser deletada
+
+        # executar o codigo SQL 
+
+        #Printar mesanje de exito
         ...
     elif operacion == '3':
+
+        # Leer la id de la columna a modificar
+
+        # executar 
+        # print mesaje
         ...
     elif operacion == '4':
+        
+        # leer dados novos
+
+        # validar dados novos
+        
+        # se es valido mostrar inserir en la BBDD
+
         ...
     elif operacion == '5':
+
+        # parar programa
         print('Parado con proceso')
 
     
