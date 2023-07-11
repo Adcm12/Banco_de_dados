@@ -45,7 +45,7 @@ VALUES
 --Alterando tabelas:
 --Usado para alterar tabelas
 --RENAME TO que renombra la tabela
-ALTER TABLE Tablas
+ALTER TABLE Contactos
 RENAME TO Tabla;
 
 -- ADD COLUMN adiciona una columna
@@ -59,7 +59,7 @@ DROP COLUMN columna_nova;
 --Resetando Tabelas
 --DELETE From BORRA TODOS LOS DATOS DE LA TABELA SI NO FUERON PASADOS POR UNA CONDICION ESPEFICA
 --VACUM comienza de nuevo el id
-DELETE FROM Tabla;
+DELETE FROM Contactos;
 
 VACUUM;
 
