@@ -9,7 +9,7 @@ cursor = conexion.cursor()
 
 #Mensaje para crud
 
-menu_crud = '\nEscoje una opcion abajo: '
+menu_crud = '\n\nEscoje una opcion abajo: '
 menu_crud += '\n1) Selecionar'
 menu_crud += '\n2) Deletar'
 menu_crud += '\n3) Actualizar'
@@ -25,28 +25,35 @@ while True:
 
         os.system('cls')
 
-        cursor.execute(f''' 
-        SELECT * FROM Tabla
-        ''')
+        cursor.execute('SELECT * FROM Contactos')
 
         resultado = cursor.fetchall()
-
-        # print(resultado)
-        # print(type(resultado))
 
         for item in resultado:
             print(item)
 
+    # elif operacion == '2':
 
+        # os.system('cls')
 
-    elif operacion == '2':
+        # deletar = input('Informe un numero de la id: ')
 
-        #Ler id de la columna a ser deletada
+        # delatar = int(deletar)
 
-        # executar o codigo SQL 
+        # #Ler id de la columna a ser deletada
 
-        #Printar mesanje de exito
-        ...
+        # cursor.execute(''' 
+                       
+        # DELETE FROM Tabla
+        # WHERE id = deletar;
+
+        # ''')
+
+        # print('Id eliminada con exito')
+        # # executar o codigo SQL 
+
+        # #Printar mesanje de exito
+        
     elif operacion == '3':
 
         # Leer la id de la columna a modificar

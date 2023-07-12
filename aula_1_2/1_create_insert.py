@@ -8,7 +8,7 @@ import os
 os.system('cls')
 
 #Conexion con la BBDD
-conexion = sqlite3.connect('Tabla.db')
+conexion = sqlite3.connect('mydatabase.db')
 print('Conexion creada con exito')
 
 #Cursor para manipular el banco de datos

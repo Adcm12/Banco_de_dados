@@ -1,14 +1,11 @@
--- database: c:\Users\Apex02\Desktop\Banco_de_dados\aula_1e2\mydatabase.db
+-- database: c:\Users\Adrian12\Desktop\Banco_de_dados\aula_1e2\Tabla.db
 
 -- Usado para seleccionar datos especificos o no de una tabla de datos
 
 SELECT nome, edad, email FROM Tabla
 WHERE edad >18 AND nome  = 'Jose';
 
-SELECT * FROM Tabla
-WHERE nome = "Jose"
-AND edad >18
-AND id > 2;
+SELECT * FROM Contactos;
 
 
 -- Deletar datos
