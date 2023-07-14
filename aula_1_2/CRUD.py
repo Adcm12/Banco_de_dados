@@ -58,31 +58,42 @@ while True:
         # Leer la id de la columna a modificar
         nro_id = input('\nInforme un numero de la id: ')
 
-        nombre = input('Informa el nuevo nombre: ')
+        nombre = input('\nInforma el nuevo nombre: ')
         edad = input('Informa la nueva edad: ')
         email = input('Informa el nuevo email: ')
+        edad=(int(edad))
 
         todo= (nombre, edad, email)
-
         nro_id = int(nro_id)
 
-        cursor.execute(f'''
+        validacion = nombre != '' and len(nombre) >= 3
+        validacion1 = edad > 10 and edad < 100
+        validacion2 = email != '' and '@' in email and '.com' in email
+        validacion1=(int(validacion1))
 
-        UPDATE Contactos
-        SET nome == ?, edad == ?, email == ?
-        WHERE id == {nro_id}
+        if validacion and validacion1 and validacion2 :
 
-         ''', todo)
+            print(f'\nNome {nombre}, edad {edad}, e email {email}, son datos validos')
+
+            cursor.execute(f'''
+
+            UPDATE Contactos
+            SET nome == ?, edad == ?, email == ?
+            WHERE id == {nro_id}
+
+            ''', todo)
         
-        # executar         
-        conexionn.commit()
+            conexionn.commit()
+            print('Datos cambiados con exito!')
+
+        else :
+            print(f'\nNombre es valido {validacion}')
+            print(f'Edad es valido {validacion1}')
+            print(f'Email es valido {validacion2}')
+            print('\nInforme datos de validos')
 
         # print mesaje        
-        print('Datos cambiados con exito!')
 
-
-        ...
-    
     elif operacion == '4':
 
        # leer dados novos
@@ -97,34 +108,28 @@ while True:
         validacion1 = edad > 10 and edad < 100
         validacion2 = email != '' and '@' in email
 
-
-
         if validacion and validacion1 and validacion2 :
 
             print(f'\nNome {nombre}, edad {edad}, e email {email}, son datos validos')
 
-            
+            cursor.execute(f'''
+
+                INSERT INTO Contactos ( nome, edad, email)
+
+                VALUES('{nombre}', {edad} , '{email}')
+
+            ''')
+
+            print('Datos inseridos con exito')
+
+            conexionn.commit()
+            print('Comito datos con exito')
+         
         else :
             print(f'Nombre es valido {validacion}')
             print(f'Edad es valido {validacion1}')
             print(f'Email es valido {validacion2}')
             print('Informe datos de validos')
-
-        cursor.execute(f'''
-
-            INSERT INTO Contactos ( nome, edad, email)
-
-            VALUES('{nombre}', {edad} , '{email}')
-
-        ''')
-
-        print('Datos inseridos con exito')
-
-        conexionn.commit()
-        print('Comito datos con exito')
-
-
-        # se es valido mostrar inserir en la BBDD
 
     elif operacion == '5':
         # parar programa

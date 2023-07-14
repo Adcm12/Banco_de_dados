@@ -1,5 +1,4 @@
 -- database: c:\Users\Adrian12\Desktop\Banco_de_dados\aula_1_2\BBDD.db
-
 CREATE TABLE IF NOT EXISTS
     Contactos (
         id INTEGER PRIMARY KEY,
@@ -8,7 +7,15 @@ CREATE TABLE IF NOT EXISTS
         email TEXT (100)
     );
 
+VACUUM;
+
 INSERT INTO
     Contactos (nome, edad, email)
 VALUES
-    ('Alejandra', 10, 'david.@gmail.com');
+    ('Azaelys', 17, 'david.@gmail.com');
+
+
+
+DELETE FROM Contactos
+WHERE
+    nome == 'AAAA';

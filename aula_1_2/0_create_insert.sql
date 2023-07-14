@@ -66,7 +66,7 @@ DROP COLUMN columna_nova;
 DELETE FROM Contactos;
 
 -- --VACUM comienza de nuevo el id
--- VACUUM INTO Tabla;
+VACUM INTO 
 
 --Destruindo tabela
 DELETE FROM Tabla
