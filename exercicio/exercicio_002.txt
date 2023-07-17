@@ -1,0 +1,22 @@
+Exercício 1: Crie uma tabela chamada "clientes" com os campos "id" (chave primária), 
+"nome", "idade" e "email".
+
+Exercício 2: Insira três registros na tabela "clientes".
+
+Exercício 3: Atualize a idade do cliente com "id" igual a 1 para uma nova idade.
+
+Exercício 4: Exclua o cliente com "id" igual a 2 da tabela "clientes".
+
+Exercício 5: Selecione todos os clientes da tabela "clientes" e ordene-os por idade em ordem crescente.
+
+Exercício 6: Selecione o nome e o email dos clientes com idade superior a 30 anos.
+
+Exercício 7: Conte quantos clientes existem na tabela "clientes".
+
+Exercício 8: Calcule a idade média dos clientes.
+
+Exercício 9: Crie uma nova tabela chamada "pedidos" com os campos "id" (chave primária), "cliente_id" (chave estrangeira referenciando a tabela "clientes"), "produto" e "valor".
+
+Exercício 10: Selecione o nome do cliente e o produto de todos os pedidos realizados, juntando as tabelas "clientes" e "pedidos" pela chave estrangeira "cliente_id".
+
+Você pode resolver esses exercícios utilizando a linguagem SQL com comandos como CREATE TABLE, INSERT INTO, UPDATE, DELETE, SELECT, COUNT, AVG, JOIN, etc. Pratique esses comandos para melhorar suas habilidades em consulta e manipulação de dados com o SQLite.
