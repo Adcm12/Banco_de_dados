@@ -124,6 +124,76 @@ SELECT COUNT(Linguagem_programacion) AS cantidad_edad FROM Programadores
 WHERE Linguagem_programacion = 'Python'
 GROUP BY Linguagem_programacion;
 
+-- EXERCICIO 1 -------------------------------------------------
+-- Criar a coluna salario_dev na tabela Programadores e inserir salários diferentes
+-- para todos as linhas.
+
+-- Em seguida, selecionar os dados ordenando por id
+ 
+-- Mostrar a média da coluna salario_dev 
+
+Alter TABLE Programadores
+Add Salario_Dev;
+
+UPDATE Programadores
+SET Salario_Dev = 20000
+where id = 12;
+
+SELECT * FROM Programadores
+ORDER BY Salario_Dev ASC;
+
+SELECT * FROM Programadores
+ORDER BY Salario_Dev DESC;
+
+
+SELECT AVG(Salario_Dev) AS media_Salario
+FROM Programadores;
+
+
+------EXERCICIO 2 --------------------------------------------------------------------------------------------------
+
+-- Criar mais 5 colunas em uma das tabelas
+ALTER TABLE Programadores
+ADD Endereço
+
+-- inserir os dados manualmente com insert into
+
+UPDATE Programadores
+Set Sobrenome = 'Varela', Tempo_na_empresa = 2, Numero_tlf = 47991569787, Endereço ='Rua Bolivar 64'
+where id = 12;
+
+-- Selecionar a maior idade, e o menor id da tabela Programadores
+
+SELECT MAX(idade) AS Idade_mayor,
+MIN(id) AS Id_menor FROM Programadores;
+
+-- Selecionar todas as colunas da tabela Programadores e ordenar pelo nome em ordem aufabética
+
+SELECT * FROM Programadores
+ORDER BY nome ASC;
+
+-- Selecionar a idade da tabela Programadores, agrupando pela idade 
+-- mostrando a mesma como total_idade_grup apenas onde a idade é maior ou igual a 18
+
+SELECT count(idade) AS total_idade_grup, idade AS Idade  FROM Programadores
+WHERE idade >= 18
+GROUP BY idade;
+
+-- Ordenar a tabela Programadores e ordenando por id
+
+SELECT * from Programadores
+ORDER BY id ASC;
+
+-- Homework:
+-- Criar uma tabela nova, inserir 20 linhas e 8 colunas na tabela
+-- Refazer todos os exercícios desse arquivo com a tabela criada
+
+
+
+
+
+
+
 
 
 
