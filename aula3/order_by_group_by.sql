@@ -90,7 +90,6 @@ ORDER BY nome ASC;
 
 SELECT * from Programadores
 ORDER BY nome DESC;
-
 -- Exercicio
 
 -- Ordene la tabela programadores por todas las columnas usando tanto DESC y ASC

@@ -11,27 +11,77 @@
 -- Crie uma tabela chamada "Alunos" com as colunas id como inteiro e chave primária,
 -- nome como texto, idade como inteiro, notas como double, matéria como texto.
 
+CREATE TABLE IF NOT EXISTS Alumnos (
+
+    id INTEGER PRIMARY KEY,
+    Nombre text (40),
+    Edad INTEGER,
+    Notas DOUBLE,
+    Materia TEXT (40)
+);
+
 -- Insira 20 linhas distintas na tabela alunos para cada linha, tente incluir diversidade nas notas e matérias.
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Pablo Vazques', 20, 20, 'Ingles');
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Martha Castillo', 17, 16, 'Ingles');
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Keilyn', 17, 17, 'Ingles');
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Ariadna Marcano', 20, 20, 'Ingles');
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Adrian Castillo', 20, 20, 'Ingles');
 
 -- Selecione todos os registros da tabela "Alunos".
 
+SELECT * FROM Alumnos;
+
 -- Selecione apenas o nome e a idade dos alunos da tabela "Alunos".
+
+SELECT Nombre, Edad FROM Alumnos;
 
 -- Insira um novo aluno na tabela "Alunos" com nome "João" e idade 25, sem matéria e sem notas.
 
+INSERT INTO Alumnos (Nombre, Edad)
+Values('João', 25);
+
 -- Selecione todas as colunas onde a matéria está com valor null.
+SELECT * FROM Alumnos
+WHERE Materia IS NULL;
 
 -- Atualize a idade do aluno com id 10 para 22 anos na tabela "Alunos".
+UPDATE Alumnos
+SET Edad = 22
+WHERE id = 10;
 
 -- Selecione a maior idade presente na tabela "Alunos".
+SELECT MAX(Edad) AS Edad_Mayor
+FROM Alumnos;
 
 -- Selecione o menor valor da coluna "notas".
+SELECT MIN(Notas) AS Nota_menor
+FROM Alumnos;
 
 -- Ordene os alunos da tabela "Alunos" por nota em ordem decrescente.
+SELECT * FROM Alumnos
+ORDER BY Notas DESC;
 
 -- Calcule a média das notas dos alunos.
+SELECT round(AVG(Notas), 2) AS Media_Notas
+FROM Alumnos;
+-- Inserir mais 15 linhas com dados distintos, e modirifcar três linhas existentes
+--em pelo menos duas colunas cada.
 
--- Inserir mais 15 linhas com dados distintos, e modirifcar três linhas existentes em pelo menos duas colunas cada.
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Pablo Vazques', 20, 19, 'Biología');
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Martha Castillo', 17, 15, 'Biología');
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Keilyn', 17, 13, 'Biología');
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Ariadna Marcano', 20, 17, 'Biología');
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
+Values('Adrian Castillo', 20, 18, 'Biología');
 
 -- Crie uma coluna escola e insira as escolas para os alunos usando update 
 
@@ -63,42 +113,13 @@
 
 -- Escreva uma consulta SQL que liste o nome do aluno mais velho de cada escola.
 
-CREATE TABLE IF NOT EXISTS Alumnos (
 
-    id INTEGER PRIMARY KEY,
-    Nombre text (40),
-    Edad INTEGER,
-    Notas DOUBLE,
-    Materia TEXT (40)
-);
 
-INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
-Values('Pablo Vazques', 20, 20, 'Ingles');
-INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
-Values('Martha Castillo', 17, 16, 'Ingles');
-INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
-Values('Keilyn', 17, 17, 'Ingles');
-INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
-Values('Ariadna Marcano', 20, 20, 'Ingles');
-INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
-Values('Adrian Castillo', 20, 20, 'Ingles');
 
-SELECT * FROM Alumnos;
 
-SELECT Nombre, Edad FROM Alumnos;
 
-INSERT INTO Alumnos (Nombre, Edad)
-Values('João', 25);
 
-UPDATE Alumnos
-SET Edad = 22
-WHERE id = 10;
 
-SELECT MAX(Edad) AS Edad_Mayor
-FROM Alumnos;
-
-SELECT MIN(Notas) AS Nota_menor
-FROM Alumnos;
 
 SELECT * from Alumnos
 ORDER BY id ASC;
