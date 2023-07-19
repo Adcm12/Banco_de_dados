@@ -88,8 +88,8 @@ ALTER TABLE Alumnos
 ADD Escola;
 
 UPDATE Alumnos 
-SET Escola = "Bom Jesus"
-Where id =26;
+SET Edad = 60
+Where id =15;
 UPDATE Alumnos 
 SET Escola = "Bom Jesus"
 Where id =27;
@@ -125,20 +125,39 @@ FROM Alumnos;
 
 -- Selecione os alunos que obtiveram uma nota maior ou igual a 7 na disciplina de "Matemática".
 
+SELECT * FROM Alumnos
+WHERE Notas >= 17 AND Materia = 'Matematica';
 -- Selecione os alunos que obtiveram uma nota menor que 5 na disciplina de "História".
 
+SELECT * FROM Alumnos
+WHERE Notas <15 AND Materia = 'Biología';
+
 -- Selecione os alunos que têm o nome terminado com a letra "o" na tabela "Alunos".
+SELECT * FROM Alumnos
+where Nombre like '%o';
 
 -- Selecione os alunos que estudam na escola "Escola Y" e têm idade menor que 30 anos na tabela "Alunos".
+SELECT * FROM Alumnos
+WHERE Edad <30 AND Escola = 'UEC. Monte Sacro';
 
 -- Selecione os alunos que estudam na escola "Escola Z" ou têm mais de 35 anos na tabela "Alunos".
+SELECT * FROM Alumnos
+WHERE Edad >20 AND Escola = 'UEC. Monte Carmelo';
 
 -- Ordene os alunos da tabela "Alunos" por nome em ordem alfabética.
+SELECT * FROM Alumnos
+ORDER BY Nombre ASC;
 
 -- Conte quantos alunos obtiveram a nota máxima na disciplina de "Química".
+SELECT COUNT(Notas) AS Nota_Maxima FROM Alumnos
+WHERE Notas = 20  AND Materia = 'Quimica'
+GROUP BY Notas;
 
 -- Selecione os alunos cujo nome contém a letra "e" e a idade é maior que 25 na tabela "Alunos".
+SELECT * FROM Alumnos
+where Nombre like '%e%' AND Edad > 25;
 
 -- Escreva uma consulta SQL que liste o nome do aluno mais velho de cada escola
-
+SELECT Nombre, Edad, Escola FROM Alumnos
+WHERE Edad >= 50 
 
