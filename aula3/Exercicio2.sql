@@ -1,6 +1,6 @@
--- database: c:\Users\Adrian12\Desktop\Banco_de_dados\aula_1_2\aula3\Exercicio2.db
+-- database: c:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.db
 
--- # Exercícios:
+-- # Exercícios:C:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.db
 
 -- OBS: Se o exercício pedir por dados que ainda não existem, inserir os mesmos.
     -- Cada nota, corresponderá a uma matéria do aluno, portanto o alunos pode
@@ -84,16 +84,44 @@ INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
 Values('Adrian Castillo', 20, 18, 'Biología');
 
 -- Crie uma coluna escola e insira as escolas para os alunos usando update 
+ALTER TABLE Alumnos
+ADD Escola;
+
+UPDATE Alumnos 
+SET Escola = "Bom Jesus"
+Where id =26;
+UPDATE Alumnos 
+SET Escola = "Bom Jesus"
+Where id =27;
+UPDATE Alumnos
+ SET Escola = "Bom Jesus"
+ Where id =15;
+UPDATE Alumnos
+SET Escola = "Bom Jesus"
+Where id =29;
+UPDATE Alumnos 
+SET Escola = "Bom Jesus"
+Where id =31;
 
 -- Selecione os alunos cujo nome começa com a letra "A" na tabela "Alunos".
+SELECT * FROM Alumnos
+where Nombre like 'A%';
 
 -- Ordene os alunos da tabela "Alunos" por idade em ordem crescente.
+SELECT * FROM Alumnos
+ORDER BY Edad ASC;
 
 -- Selecione os alunos que têm idade entre 20 e 25 anos na tabela "Alunos".
+SELECT * FROM Alumnos
+WHERE Edad BETWEEN 20 AND 25;
 
 -- Selecione os alunos que têm idade maior que 18 e que estudam na escola "Bom Jesus" na tabela "Alunos".
+SELECT * FROM Alumnos
+WHERE Edad > 18 AND Escola = 'Bom Jesus';
 
 -- Escreva uma consulta SQL que calcule a média de idade dos alunos para cada escola
+SELECT round(AVG(Edad), 2) AS Media_Edad
+FROM Alumnos;
 
 -- Selecione os alunos que obtiveram uma nota maior ou igual a 7 na disciplina de "Matemática".
 
@@ -111,16 +139,6 @@ Values('Adrian Castillo', 20, 18, 'Biología');
 
 -- Selecione os alunos cujo nome contém a letra "e" e a idade é maior que 25 na tabela "Alunos".
 
--- Escreva uma consulta SQL que liste o nome do aluno mais velho de cada escola.
+-- Escreva uma consulta SQL que liste o nome do aluno mais velho de cada escola
 
-
-
-
-
-
-
-
-
-SELECT * from Alumnos
-ORDER BY id ASC;
 
