@@ -1,4 +1,4 @@
--- database: c:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.db
+-- database: c:\Users\Adrian12\Desktop\Banco_de_dados\aula_3_4\Exercicio2.db
 
 -- # Exercícios:C:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.dbC:\Users\Adrian12\Desktop\Banco_de_dados\aula3\Exercicio2.db
 
@@ -51,8 +51,8 @@ WHERE Materia IS NULL;
 
 -- Atualize a idade do aluno com id 10 para 22 anos na tabela "Alunos".
 UPDATE Alumnos
-SET Edad = 22
-WHERE id = 10;
+SET Email = 'Ana.llll@'
+WHERE id > 23;
 
 -- Selecione a maior idade presente na tabela "Alunos".
 SELECT MAX(Edad) AS Edad_Mayor
@@ -72,8 +72,8 @@ FROM Alumnos;
 -- Inserir mais 15 linhas com dados distintos, e modirifcar três linhas existentes
 --em pelo menos duas colunas cada.
 
-INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
-Values('Pablo Vazques', 20, 19, 'Biología');
+INSERT INTO Alumnos (Nombre, Edad, Notas, Materia, Email)
+Values('Adrian Castillo', 20, 19, 'Biología', 'david.marcanao07@');
 INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
 Values('Martha Castillo', 17, 15, 'Biología');
 INSERT INTO Alumnos (Nombre, Edad, Notas, Materia)
@@ -85,23 +85,7 @@ Values('Adrian Castillo', 20, 18, 'Biología');
 
 -- Crie uma coluna escola e insira as escolas para os alunos usando update 
 ALTER TABLE Alumnos
-ADD Escola;
-
-UPDATE Alumnos 
-SET Edad = 60
-Where id =15;
-UPDATE Alumnos 
-SET Escola = "Bom Jesus"
-Where id =27;
-UPDATE Alumnos
- SET Escola = "Bom Jesus"
- Where id =15;
-UPDATE Alumnos
-SET Escola = "Bom Jesus"
-Where id =29;
-UPDATE Alumnos 
-SET Escola = "Bom Jesus"
-Where id =31;
+ADD Escola;  
 
 -- Selecione os alunos cujo nome começa com a letra "A" na tabela "Alunos".
 SELECT * FROM Alumnos
@@ -149,9 +133,8 @@ SELECT * FROM Alumnos
 ORDER BY Nombre ASC;
 
 -- Conte quantos alunos obtiveram a nota máxima na disciplina de "Química".
-SELECT COUNT(Notas) AS Nota_Maxima FROM Alumnos
-WHERE Notas = 20  AND Materia = 'Quimica'
-GROUP BY Notas;
+SELECT COUNT(*) AS Nota_Maxima FROM Alumnos
+WHERE Notas = 20 AND Materia = 'Quimica';
 
 -- Selecione os alunos cujo nome contém a letra "e" e a idade é maior que 25 na tabela "Alunos".
 SELECT * FROM Alumnos
@@ -159,5 +142,10 @@ where Nombre like '%e%' AND Edad > 25;
 
 -- Escreva uma consulta SQL que liste o nome do aluno mais velho de cada escola
 SELECT Nombre, Edad, Escola FROM Alumnos
-WHERE Edad >= 50 
+WHERE Edad >= 50 ;
+
+
+
+ALTER TABLE Alumnos
+add Email;
 
