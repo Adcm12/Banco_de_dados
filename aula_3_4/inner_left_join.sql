@@ -103,7 +103,7 @@ ALTER TABLE Usuarios
 ADD Activo;
 
 UPDATE Usuarios
-SET Activo = TRUE
+SET Activo = FAlse
 WHERE id >7;
 
 -- Agora, suponha que você queira obter uma lista dos Usuarios juntamente 
@@ -124,5 +124,5 @@ on Usuarios.Activo = TRUE
 And Contactos.Activo = TRUE
 WHERE Usuarios.Edad_usu BETWEEN 18 AND 30
 AND Contactos.Edad_usu BETWEEN 18 AND 30
-ORDER BY Contactos.Nombre_usu AND Usuarios.Nombre_usu ASC
+ORDER BY Contactos.Nombre_usu ASC
 -- ORDER BY Usuarios.Nombre_usu ASC;
