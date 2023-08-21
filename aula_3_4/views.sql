@@ -7,3 +7,14 @@ from Contactos;
 SELECT * from SelectContactos;
 
 DROP VIEW SelectContactos;
+
+CREATE VIEW ProgramadoresUsuariosEmailMatch AS  
+select Contactos.Nombre_usu As Programadores,
+Contactos.Email_usu As Email,
+Usuarios.Nombre_usu AS Usuario
+From Contactos INNER JOIN Usuarios
+ON Contactos.Email_usu = ,
+WHERE Nombre_usu is not null 
+ORDER BY Nombre_usu ASC;
+
+SELECT * from ProgramadoresUsuariosEmailMatch;
